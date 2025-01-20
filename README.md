@@ -7,7 +7,7 @@ A simple Flask-based chatbot that displays emotions through dynamic SVG expressi
 - Real-time chat interface
 - Dynamic emotional expressions using SVG
 - In-memory conversation history
-- OpenAI GPT integration
+- OpenAI gpt-4o-mini integration
 
 ## Setup
 
