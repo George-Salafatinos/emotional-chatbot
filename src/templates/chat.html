@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmotiBot | AI with Feelings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i class="fas fa-robot"></i>
+                <h1>EmotiBot</h1>
+            </div>
+            <div class="emotion-card">
+                <h2>Current Mood</h2>
+                <div class="emotion-display">
+                    <svg id="emotion-svg" viewBox="0 0 200 200">
+                        <!-- Default neutral face -->
+                        <circle cx="100" cy="100" r="60" fill="#FFE0B2" stroke="#000" stroke-width="2"/>
+                        <circle cx="80" cy="90" r="5" fill="#000"/>
+                        <circle cx="120" cy="90" r="5" fill="#000"/>
+                        <path d="M70,120 Q100,140 130,120" fill="none" stroke="#000" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="emotion-stats">
+                    <div class="emotion-stat" data-emotion="happiness">
+                        <label>Happiness</label>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="emotion-stat" data-emotion="energy">
+                        <label>Energy</label>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="emotion-stat" data-emotion="calmness">
+                        <label>Calmness</label>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="emotion-stat" data-emotion="confidence">
+                        <label>Confidence</label>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <header class="chat-header">
+                <h2>Chat Session</h2>
+                <div class="status-indicator">
+                    <span class="dot"></span>
+                    Online
+                </div>
+            </header>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="message-group timestamp">
+                    <span>Today</span>
+                </div>
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Hello! I'm EmotiBot. I'm here to chat and I'll express my emotions as we talk. How can I help you today?
+                    </div>
+                    <div class="message-time">12:00 PM</div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="message-input" placeholder="Type your message...">
+                    <button id="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="typing-indicator" style="display: none;">
+                    EmotiBot is thinking...
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
